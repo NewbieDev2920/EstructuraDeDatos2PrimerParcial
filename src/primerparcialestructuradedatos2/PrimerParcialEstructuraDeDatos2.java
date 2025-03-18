@@ -25,6 +25,8 @@ public class PrimerParcialEstructuraDeDatos2 {
         System.out.println("");
         System.out.println(AdivinanzaClimatica.generarVectorInsercion(-10, 50, 5).length);
         */
+        
+        Interfaz gui = new Interfaz(arbol);
     }
     
 }
