@@ -13,6 +13,30 @@ public class Nodo {
     private Nodo der;
     private int valor;
 
+    public int getNivel(Nodo raiz, Nodo objetivo, int nivel){
+        if (raiz.getValor() == objetivo.getValor()) {
+            return nivel; // Nodo encontrado
+        }
+
+        if (objetivo.getValor() < raiz.getValor()) {
+            // Buscar en el subárbol izquierdo
+            return getNivel(raiz.getIzq(), objetivo, nivel + 1);
+        } else {
+            // Buscar en el subárbol derecho
+            return getNivel(raiz.getDer(), objetivo, nivel + 1);
+        }
+    }
+    
+    public String status(ABB arbol){
+        if(this == arbol.getRaiz()){
+            return "Nodo raiz";
+        }
+        if (this.getIzq()==null & this.getDer()==null){
+            return "Nodo hoja";
+        }
+        return "Nodo rama";
+    }
+    
     public Nodo(int valor) {
         this.valor = valor;
     }
@@ -40,6 +64,5 @@ public class Nodo {
     public void setValor(int valor) {
         this.valor = valor;
     }
-    
     
 }

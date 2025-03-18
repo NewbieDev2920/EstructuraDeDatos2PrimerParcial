@@ -4,6 +4,8 @@
  */
 package primerparcialestructuradedatos2;
 
+import java.util.Scanner;
+
 /**
  *
  * @author cande
@@ -19,14 +21,27 @@ public class PrimerParcialEstructuraDeDatos2 {
         for (int numero : numeros) {
             arbol.insertar(numero);
         }
+        arbol.imprimir(arbol.getRaiz(), 0);
+        Scanner leer = new Scanner(System.in);
+        int intentos = 1;
+        while (intentos <= 4) {
+            System.out.println("Escriba nodo: ");
+            int nodo = leer.nextInt();
+            if (arbol.busqueda(arbol.getRaiz(), nodo) == null) {
+                System.out.println("Nodo no encontrado");
+                intentos++;
+            } else {
+                System.out.println("Nivel: " + arbol.busqueda(arbol.getRaiz(), nodo).getNivel(arbol.getRaiz(), arbol.busqueda(arbol.getRaiz(), nodo), 0));
+                System.out.println(arbol.busqueda(arbol.getRaiz(), nodo).status(arbol));
+                intentos = 10;
+            }
+        }
+        if(intentos == 10){
+            System.out.println("Felicidades!");
+        }else{
+            System.out.println("Dato climatico");
+        }
         
-        /*
-        AdivinanzaClimatica.imprimirVector(AdivinanzaClimatica.generarVectorInsercion(-10, 50, 5));
-        System.out.println("");
-        System.out.println(AdivinanzaClimatica.generarVectorInsercion(-10, 50, 5).length);
-        */
     }
-    
-}
-    
 
+}

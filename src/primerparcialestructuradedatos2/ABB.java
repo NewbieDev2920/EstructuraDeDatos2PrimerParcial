@@ -36,6 +36,41 @@ public class ABB {
         }
     }
     
+    public void imprimir ( Nodo n1 ,int nivel ){
+        if ( n1 != null ){
+            imprimir ( n1.getDer() , nivel+1 );
+            for (int i = 0; i < nivel; i++){
+                System.out.print ("      ");
+            }
+            System.out.println(n1.getValor() );
+            imprimir (n1.getIzq() , nivel+1 );
+           
+        }
+    }
+    
+    public void recorridoPreorden(Nodo nodo) {
+        if (nodo == null) {
+            return;
+        }
+        System.out.println(nodo.getValor());
+        recorridoPreorden(nodo.getIzq());
+        recorridoPreorden(nodo.getDer());
+    }
+    
+    public Nodo busqueda(Nodo raiz, int objetivo){
+        if (raiz==null){
+            return null;
+        }
+        if(raiz.getValor()==objetivo){
+            return raiz;
+        }
+        Nodo encontrado = busqueda(raiz.getIzq(),objetivo);
+        if(encontrado!=null){
+            return encontrado;
+        }
+        return busqueda(raiz.getDer(),objetivo);
+    }
+    
     public Nodo getRaiz() {
         return raiz;
     }
