@@ -10,7 +10,10 @@ package primerparcialestructuradedatos2;
  */
 public class ABB {
     private Nodo raiz;
+    private int orden;
+    
 
+    
     public Nodo getRaiz() {
         return raiz;
     }
@@ -18,6 +21,16 @@ public class ABB {
     public void setRaiz(Nodo raiz) {
         this.raiz = raiz;
     }
+
+    public int getOrden() {
+        return orden;
+    }
+
+    public void setOrden(int orden) {
+        this.orden = orden;
+    }
+    
+    
     
     
 }

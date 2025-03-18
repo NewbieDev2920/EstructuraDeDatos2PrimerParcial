@@ -13,15 +13,24 @@ import java.util.Random;
 public class AdivinanzaClimatica {
     private ABB arbol;
     
+    
     public int[] generarVectorInsercion(int limiteInferior, int limiteSuperior, int nivelDelArbol){
         Random r = new Random();
         int res[] = {};
-        for (int i = 0; i < Math.pow(2,nivelDelArbol-1); i++) {
+        for (int i = 0; i < Math.pow(2,nivelDelArbol)-1; i++) {
             int nuevoValor = r.nextInt((limiteSuperior-limiteInferior+1)+ limiteInferior);
             res[res.length] = nuevoValor;
         }
         
         return res;
+    }
+    
+    public void imprimirArbol(){
+        for (int i = 0; i < 136; i++) {
+            System.out.print(" ");
+            System.out.println("a");
+        }
+        
     }
 
     public ABB getArbol() {
