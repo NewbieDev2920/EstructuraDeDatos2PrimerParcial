@@ -25,6 +25,8 @@ public class PrimerParcialEstructuraDeDatos2 {
         }*/
         arbol.imprimir(arbol.getRaiz(), 0);
         Scanner leer = new Scanner(System.in);
+        System.out.println("Escriba 0 para interfaz, escriba cualquier otro numero para juego.");
+        Interfaz gui = new Interfaz(arbol);
         int intentos = 1;
         while (intentos <= 4) {
             System.out.println("Escriba nodo: ");
@@ -44,8 +46,7 @@ public class PrimerParcialEstructuraDeDatos2 {
         } else {
             System.out.println("Dato climatico");
         }
-        Interfaz gui = new Interfaz(arbol);
-<<<<<<< HEAD
+        
         
         /*
         AdivinanzaClimatica.imprimirVector(AdivinanzaClimatica.generarVectorInsercion(-10, 50, 5));
@@ -56,11 +57,4 @@ public class PrimerParcialEstructuraDeDatos2 {
         
     }
     
-}
-    
-=======
->>>>>>> 2315df7ce032cb8b1a19705271b7f894bcc79c2e
-
-    }
-
 }

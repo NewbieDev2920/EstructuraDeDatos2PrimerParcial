@@ -30,7 +30,7 @@ public class Interfaz extends JFrame {
                 g.setFont(new Font("Bold",1,12));
                 g.drawString("ADIVINANZA CLIMATICA", 10,30);
                 var g2D = (Graphics2D) g;
-                dibujarArbol(tree.getRaiz(), g2D, getWidth()/2, 5, 0);
+                dibujarArbol(tree.getRaiz(), g2D, getWidth()/2-10, 60, 0);
                 
             }
         };
@@ -47,7 +47,7 @@ public class Interfaz extends JFrame {
         
         
         if(n.getIzq() != null){
-            int newx = (int) ((int) (x - 230) + ( index * 45));
+            int newx = (int) ((int) (x - 260) + ( index * 51));
             int newy = y+70;
             g2D.setPaint(Color.red);
             g2D.drawLine (x+diametro/2, y, newx, newy);
@@ -56,7 +56,7 @@ public class Interfaz extends JFrame {
         }
         
         if(n.getDer() != null){
-            int newx = (int) ((int) (x + 230) - (index * 45)  );
+            int newx = (int) ((int) (x + 260) - (index * 51)  );
             int newy = y+70;
             g2D.setPaint(Color.green);
             g2D.drawLine (x+diametro/2, y, newx, newy);
