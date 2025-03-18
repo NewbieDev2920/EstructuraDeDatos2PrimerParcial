@@ -15,14 +15,11 @@ public class Nodo {
 
     public int getNivel(Nodo raiz, Nodo objetivo, int nivel){
         if (raiz.getValor() == objetivo.getValor()) {
-            return nivel; // Nodo encontrado
+            return nivel;
         }
-
         if (objetivo.getValor() < raiz.getValor()) {
-            // Buscar en el subárbol izquierdo
             return getNivel(raiz.getIzq(), objetivo, nivel + 1);
         } else {
-            // Buscar en el subárbol derecho
             return getNivel(raiz.getDer(), objetivo, nivel + 1);
         }
     }

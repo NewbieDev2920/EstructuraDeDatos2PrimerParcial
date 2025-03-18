@@ -4,6 +4,7 @@
  */
 package primerparcialestructuradedatos2;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -18,9 +19,10 @@ public class PrimerParcialEstructuraDeDatos2 {
     public static void main(String[] args) {
         ABB arbol = new ABB();
         int[] numeros = AdivinanzaClimatica.generarVectorInsercion(-10, 50, 5);
-        for (int numero : numeros) {
+        arbol.completar(numeros);
+        /*for (int numero : numeros) {
             arbol.insertar(numero);
-        }
+        }*/
         arbol.imprimir(arbol.getRaiz(), 0);
         Scanner leer = new Scanner(System.in);
         int intentos = 1;
@@ -28,6 +30,7 @@ public class PrimerParcialEstructuraDeDatos2 {
             System.out.println("Escriba nodo: ");
             int nodo = leer.nextInt();
             if (arbol.busqueda(arbol.getRaiz(), nodo) == null) {
+                System.out.println();
                 System.out.println("Nodo no encontrado");
                 intentos++;
             } else {
@@ -36,12 +39,12 @@ public class PrimerParcialEstructuraDeDatos2 {
                 intentos = 10;
             }
         }
-        if(intentos == 10){
+        if (intentos == 10) {
             System.out.println("Felicidades!");
-        }else{
+        } else {
             System.out.println("Dato climatico");
         }
-        
+
     }
 
 }

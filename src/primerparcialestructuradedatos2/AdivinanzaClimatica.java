@@ -28,11 +28,9 @@ public class AdivinanzaClimatica {
         }
         return res;
     }
-
-    public static void imprimirVector(int[] res) {
-        for (int i = 0; i < res.length; i++) {
-            System.out.print(res[i] + " ");
-        }
-    }
     
+    public String getDatoClimatico(){
+        String datoClimatico = null;
+        return datoClimatico;
+    }
 }
