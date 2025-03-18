@@ -47,7 +47,7 @@ public class Interfaz extends JFrame {
         
         
         if(n.getIzq() != null){
-            int newx = (int) ((int) (x - 260) + ( index * 51));
+            int newx = (int) ((int) (x - 260) + ( index * 49) + (index >= 3? 1: 0) * 40 );
             int newy = y+70;
             g2D.setPaint(Color.red);
             g2D.drawLine (x+diametro/2, y, newx, newy);
@@ -56,7 +56,7 @@ public class Interfaz extends JFrame {
         }
         
         if(n.getDer() != null){
-            int newx = (int) ((int) (x + 260) - (index * 51)  );
+            int newx = (int) ((int) (x + 260) - (index * 49) - (index >= 3? 1 : 0) * 40);
             int newy = y+70;
             g2D.setPaint(Color.green);
             g2D.drawLine (x+diametro/2, y, newx, newy);
