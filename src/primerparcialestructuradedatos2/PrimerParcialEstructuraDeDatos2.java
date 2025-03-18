@@ -14,7 +14,19 @@ public class PrimerParcialEstructuraDeDatos2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        ABB arbol = new ABB();
+        int[] numeros = AdivinanzaClimatica.generarVectorInsercion(-10, 50, 5);
+        for (int numero : numeros) {
+            arbol.insertar(numero);
+        }
+        
+        /*
+        AdivinanzaClimatica.imprimirVector(AdivinanzaClimatica.generarVectorInsercion(-10, 50, 5));
+        System.out.println("");
+        System.out.println(AdivinanzaClimatica.generarVectorInsercion(-10, 50, 5).length);
+        */
     }
     
 }
+    
+
