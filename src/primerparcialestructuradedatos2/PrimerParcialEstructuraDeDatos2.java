@@ -44,6 +44,7 @@ public class PrimerParcialEstructuraDeDatos2 {
         } else {
             System.out.println("Dato climatico");
         }
+        Interfaz gui = new Interfaz(arbol);
 <<<<<<< HEAD
         
         /*
@@ -52,7 +53,7 @@ public class PrimerParcialEstructuraDeDatos2 {
         System.out.println(AdivinanzaClimatica.generarVectorInsercion(-10, 50, 5).length);
         */
         
-        Interfaz gui = new Interfaz(arbol);
+        
     }
     
 }
