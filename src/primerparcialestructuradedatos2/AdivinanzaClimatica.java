@@ -11,26 +11,30 @@ import java.util.Random;
  * @author cande
  */
 public class AdivinanzaClimatica {
+
     private ABB arbol;
-    
-    
-    public int[] generarVectorInsercion(int limiteInferior, int limiteSuperior, int nivelDelArbol){
+
+    public static int[] generarVectorInsercion(int limiteInferior, int limiteSuperior, int nivelDelArbol) {
         Random r = new Random();
-        int res[] = {};
-        for (int i = 0; i < Math.pow(2,nivelDelArbol)-1; i++) {
-            int nuevoValor = r.nextInt((limiteSuperior-limiteInferior+1)+ limiteInferior);
-            res[res.length] = nuevoValor;
+        int res[] = new int[(int) Math.pow(2, nivelDelArbol) - 1];
+        boolean[] numerosGenerados = new boolean[limiteSuperior - limiteInferior + 1];
+        int i = 0;
+
+        while (i < Math.pow(2, nivelDelArbol) - 1) {
+            int numero = r.nextInt(limiteSuperior - limiteInferior + 1) + limiteInferior;
+            if (numerosGenerados[numero - limiteInferior]== false) {
+                res[i] = numero;
+                numerosGenerados[numero - limiteInferior] = true;
+                i++;
+            }
         }
-        
         return res;
     }
-    
-    public void imprimirArbol(){
-        for (int i = 0; i < 136; i++) {
-            System.out.print(" ");
-            System.out.println("a");
+
+    public static void imprimirVector(int[] res) {
+        for (int i = 0; i < res.length; i++) {
+            System.out.print(res[i] + " ");
         }
-        
     }
 
     public ABB getArbol() {
@@ -40,10 +44,5 @@ public class AdivinanzaClimatica {
     public AdivinanzaClimatica() {
         this.arbol = new ABB();
     }
-    
-    
-    
-    
-    
-    
+
 }

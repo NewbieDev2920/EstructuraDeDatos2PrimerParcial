@@ -11,9 +11,9 @@ package primerparcialestructuradedatos2;
 public class Nodo {
     private Nodo izq;
     private Nodo der;
-    private Nodo valor;
+    private int valor;
 
-    public Nodo(Nodo valor) {
+    public Nodo(int valor) {
         this.valor = valor;
     }
 
@@ -33,11 +33,11 @@ public class Nodo {
         this.der = der;
     }
 
-    public Nodo getValor() {
+    public int getValor() {
         return valor;
     }
 
-    public void setValor(Nodo valor) {
+    public void setValor(int valor) {
         this.valor = valor;
     }
     
