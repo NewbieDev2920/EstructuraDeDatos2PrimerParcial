@@ -14,7 +14,7 @@ import java.util.Arrays;
 public class ABB {
 
     private Nodo raiz;
-    private ArrayList<Integer> ruta;
+    public ArrayList<Integer> ruta = new ArrayList<>();
 
     public void completar(int[] numeros) {
         Arrays.sort(numeros);
@@ -64,7 +64,7 @@ public class ABB {
             for (int i = 0; i < nivel; i++) {
                 System.out.print("      ");
             }
-            System.out.println(n1.getValor());
+            System.out.println("X");
             imprimir(n1.getIzq(), nivel + 1);
 
         }
@@ -72,7 +72,7 @@ public class ABB {
 
     public Nodo busqueda(Nodo raiz, int objetivo) {
         if (raiz == null) {
-            return raiz;
+            return raiz;       
         }
         ruta.add(raiz.getValor());
         if (raiz.getValor() == objetivo) {

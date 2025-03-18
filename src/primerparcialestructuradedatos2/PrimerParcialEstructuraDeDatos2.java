@@ -17,6 +17,10 @@ public class PrimerParcialEstructuraDeDatos2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        System.out.println("Bienvenido a Adivinanza Climática. En este juego tendrás que adivinar una temperatura´promedio global la cual está medida en grados Celsius.");
+        System.out.println("Los valores varían entre -10 y 50 grados.");
+        System.out.println("Tendrás 4 oportunidades para adivinar una temperatura guardada en el siguiente árbol binario. Suerte!");
+        System.out.println("");
         ABB arbol = new ABB();
         int[] numeros = AdivinanzaClimatica.generarVectorInsercion(-10, 50, 5);
         arbol.completar(numeros);
@@ -24,6 +28,7 @@ public class PrimerParcialEstructuraDeDatos2 {
         Scanner leer = new Scanner(System.in);
         int intentos = 1;
         while (intentos <= 4) {
+            System.out.println("Intento #"+intentos);
             System.out.println("Escriba nodo: ");
             int nodo = leer.nextInt();
             if (arbol.busqueda(arbol.getRaiz(), nodo) == null) {
@@ -38,9 +43,10 @@ public class PrimerParcialEstructuraDeDatos2 {
             }
         }
         if (intentos == 10) {
-            System.out.println("Felicidades!");
+            System.out.println("Felicidades! Observe el árbol en la nueva ventana");
+            Interfaz interfaz = new Interfaz(arbol);
         } else {
-            System.out.println("A continuación un dato curioso sobre el impacto del aumento de temperaturas en el planeta:");
+            System.out.println("Lástima! Perdiste. A continuación un dato curioso sobre el impacto del aumento de temperaturas en el planeta:");
             System.out.println(AdivinanzaClimatica.getDatoClimatico());
         }
 
