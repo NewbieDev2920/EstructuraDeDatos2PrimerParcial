@@ -29,17 +29,19 @@ public class PrimerParcialEstructuraDeDatos2 {
         int intentos = 1;
         while (intentos <= 4) {
             System.out.println("Intento #"+intentos);
-            System.out.println("Escriba nodo: ");
+            System.out.print("Escriba nodo: ");
             int nodo = leer.nextInt();
             if (arbol.busqueda(arbol.getRaiz(), nodo) == null) {
                 System.out.println("Ruta: "+arbol.getRuta());
                 arbol.getRuta().clear();
                 System.out.println("Nodo no encontrado");
+                System.out.println("");
                 intentos++;
             } else {
                 System.out.println("Ruta: "+arbol.getRuta());
                 System.out.println("Nivel: " + arbol.busqueda(arbol.getRaiz(), nodo).getNivel(arbol.getRaiz(), arbol.busqueda(arbol.getRaiz(), nodo), 0));
                 System.out.println(arbol.busqueda(arbol.getRaiz(), nodo).status(arbol));
+                System.out.println("");
                 intentos = 10;
             }
         }
