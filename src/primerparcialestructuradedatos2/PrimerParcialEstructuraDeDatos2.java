@@ -33,6 +33,7 @@ public class PrimerParcialEstructuraDeDatos2 {
             int nodo = leer.nextInt();
             if (arbol.busqueda(arbol.getRaiz(), nodo) == null) {
                 System.out.println("Ruta: "+arbol.getRuta());
+                arbol.getRuta().clear();
                 System.out.println("Nodo no encontrado");
                 intentos++;
             } else {
